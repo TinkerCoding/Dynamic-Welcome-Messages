@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Javascript</title>
+    <style>
+        /*.output{
+            width: 200px;
+            height: 100px;
+            color: white;
+            text-align: center;
+        }*/
+
+    </style>
+</head>
+
+<body>
+    <div class="output"></div>
+    <button type="button">Message</button>
+    <script>
+
+    const button = document.querySelector("button");
+    const output = document.querySelector(".output");
+    // output.setAttribute("style","color:white;width: 200px;height: 100px;text-align: center;");
+    button.addEventListener("click",showOutput);
+    output.style.cssText="color:white;width: 200px;height: 100px;text-align: center;";
+    function showOutput(){
+        const date = new Date();
+        let cur = date.getHours();
+        console.log(date.getHours);
+        let message;
+        console.log(cur)
+       cur = 13;
+        if(cur>17){
+            message = "its evening";
+            output.style.backgroundColor = "black";
+        }else if(cur > 12){
+        message = "its afternoon";
+        output.style.backgroundColor = "blue";
+        }else if(cur > 0){
+        message = "its morning";
+        output.style.backgroundColor = "orange";
+        }else{
+        message = "Something is wrong";
+        output.style.backgroundColor = "red";
+        }
+    
+    output.innerHTML = "<h1>"+message+"</h1";
+
+  
+    }
+  </script>
+</body>
+</html>
